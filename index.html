@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FirmLift Bra - Lift Sempurna, Kenyamanan Tak Tertandingi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        premium: {
+                            gold: '#D4AF37',
+                            pink: '#FFB6C1',
+                            nude: '#F5EDE3',
+                            dark: '#2C1A1D',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #FDF8F3;
+            color: #2C1A1D;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-pattern {
+            background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(245,237,227,0.7) 100%);
+        }
+        
+        .premium-border {
+            position: relative;
+        }
+        
+        .premium-border::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+        
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            perspective: 1000px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .sticky-banner {
+            animation: pulse 2s infinite;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn-pulse:hover {
+            animation: pulse-slow 2s infinite;
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.1));
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Banner -->
+    <div class="sticky-banner flex justify-between items-center bg-premium-nude px-6 py-4 bottom-0 left-0 right-0 z-50 fixed border-t-2 border-premium-gold">
+        <div class="flex items-center">
+            <p class="text-lg text-premium-dark font-medium mr-4">Harga Spesial Hari Ini:</p>
+            <div class="flex items-baseline">
+                <span class="text-premium-gold font-bold text-2xl">Rp 140.000</span>
+                <span class="mx-3 text-gray-500 line-through text-xl">Rp 210.000</span>
+            </div>
+            <div class="ml-4 flex flex-col">
+                <span class="text-xs text-premium-dark bg-premium-pink px-2 py-1 rounded-full">TERBATAS</span>
+                <span id="countdown" class="text-xs text-premium-gold font-bold">Harga naik dalam: <span id="timer">15:00</span></span>
+            </div>
+        </div>
+        <a href="https://mila.orderonline.id/firmlift-bra" target="_self" class="btn-pulse bg-premium-pink hover:bg-premium-dark text-white font-bold px-6 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+            PESAN SEKARANG <i class="ml-2 fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-xl md:text-2xl font-semibold text-premium-dark">
+                    <i class="fas fa-crown text-premium-gold mr-2"></i> FirmLift Bra
+                </h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#benefits" class="hover:text-premium-gold transition">Keunggulan</a></li>
+                    <li><a href="#testimonials" class="hover:text-premium-gold transition">Testimoni</a></li>
+                    <li><a href="#features" class="hover:text-premium-gold transition">Fitur</a></li>
+                    <li><a href="#faq" class="hover:text-premium-gold transition">FAQ</a></li>
+                </ul>
+            </nav>
+            <a href="https://mila.orderonline.id/firmlift-bra" target="_self" class="hidden md:block bg-premium-pink hover:bg-premium-gold text-white px-6 py-2 rounded-full font-medium transition">
+                Beli Sekarang
+            </a>
+            <button class="md:hidden text-premium-dark">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="max-w-md">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-premium-dark mb-6">
+                            Lift Sempurna, <span class="text-premium-gold premium-border">Kenyamanan Tak Tertandingi</span>
+                        </h1>
+                        <p class="text-lg text-premium-dark mb-8">
+                            Bra tanpa kawat premium yang menyempurnakan bentuk payudara dengan dukungan maksimal dan kenyamanan sepanjang hari. Khusus untuk wanita Indonesia yang mengutamakan gaya dan kenyamanan.
+                        </p>
+                        <a href="https://mila.orderonline.id/firmlift-bra" target="_self" class="btn-pulse inline-block bg-premium-pink hover:bg-premium-dark text-white font-bold px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                            Dapatkan Potongan Spesial <i class="fas fa-gift ml-2"></i>
+                        </a>
+                        <div class="mt-8 flex items-center">
+                            <div class="flex -space-x-2">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150" alt="Happy customer" class="w-10 h-10 rounded-full border-2 border-premium-gold">
+                                <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?auto=format&fit=crop&w=150" alt="Happy customer" class="w-10 h-10 rounded-full border-2 border-premium-gold">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150" alt="Happy customer" class="w-10 h-10 rounded-full border-2 border-premium-gold">
+                            </div>
+                            <p class="ml-4 text-premium-dark">
+                                <span class="font-bold text-premium-gold">2000+</span> wanita Indonesia sudah mencoba
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -top-6 -right-6 z-0">
+                            <div class="w-64 h-64 rounded-full bg-premium-pink opacity-20"></div>
+                        </div>
+                        <img src="https://cdn.cloudfastcdn.com/image/4fed806185510875f7dbdec4c59a15213aa966d4-600.jpeg" alt="FirmLift Bra - Luxury Bra" class="w-full max-w-md rounded-xl shadow-2xl z-10 relative float">
+                        <div class="absolute -bottom-6 -left-6 z-0">
+                            <div class="w-48 h-48 rounded-full bg-premium-gold opacity-20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Banner -->
+    <div class="bg-premium-dark py-6">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-premium-gold text-xl mr-3"></i>
+                    <span class="text-white">Lift Sempurna Tanpa Kawat</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-premium-gold text-xl mr-3"></i>
+                    <span class="text-white">100% Bahan Premium</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-premium-gold text-xl mr-3"></i>
+                    <span class="text-white">Kenyamanan Sepanjang Hari</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-premium-gold text-xl mr-3"></i>
+                    <span class="text-white">Garansi 30 Hari</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-premium-nude">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-premium-dark mb-4">Mengapa FirmLift Bra Jadi <span class="text-premium-gold">Favorit</span> Wanita Indonesia?</h2>
+                <p class="text-lg text-premium-dark max-w-3xl mx-auto">
+                    Desain inovatif yang menggabungkan gaya, kenyamanan, dan dukungan sempurna untuk kebutuhan sehari-hari.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg product-card flex flex-col items-center text-center">
+                    <div class="feature-icon w-16 h-16 bg-premium-pink bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-premium-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-premium-dark mb-3">Lift Optimal</h3>
+                    <p class="text-premium-dark">
+                        Desain unik memberikan lift sempurna untuk bentuk payudara yang lebih indah tanpa menggunakan kawat yang tidak nyaman.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg product-card flex flex-col items-center text-center">
+                    <div class="feature-icon w-16 h-16 bg-premium-pink bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-wind text-premium-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-premium-dark mb-3">Bahan Bernapas</h3>
+                    <p class="text-premium-dark">
+                        Kain micro-mesh premium yang lembut dan bernapas, menjaga kulit tetap kering dan nyaman sepanjang hari.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg product-card flex flex-col items-center text-center">
+                    <div class="feature-icon w-16 h-16 bg-premium-pink bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-tshirt text-premium-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-premium-dark mb-3">Seamless Design</h3>
+                    <p class="text-premium-dark">
+                        Tanpa jahitan yang mengganggu, membuat bra nyaman dipakai dengan segala jenis pakaian tanpa garis yang terlihat.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg product-card flex flex-col items-center text-center">
+                    <div class="feature-icon w-16 h-16 bg-premium-pink bg-opacity-20 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-redo text-premium-gold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-premium-dark mb-3">Tahan Lama</h3>
+                    <p class="text-premium-dark">
+                        Kualitas premium dan elastisitas terjaga bahkan setelah pencucian berkali-kali, menjaga bentuk asli dalam jangka panjang.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20" style="background-color: #FBF5EF;">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-premium-dark mb-4">
+                    <span class="text-premium-gold">Keindahan</span> Dalam Setiap Detail
+                </h2>
+                <p class="text-lg text-premium-dark max-w-3xl mx-auto">
+                    Bra premium yang dirancang khusus untuk wanita Indonesia, memperhatikan setiap detail kenyamanan dan gaya.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-300 hover:-translate-y-2">
+                    <img src="https://cdn.cloudfastcdn.com/image/5c133ce66484f26111d7b4322555034d1ea3e42b-600.jpeg" alt="FirmLift Bra Detail" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-300 hover:-translate-y-2">
+                    <img src="https://cdn.cloudfastcdn.com/image/f312eb13fda645bb463a10f2be4b0aaef5a34cf2-600.webp" alt="FirmLift Bra Front View" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-300 hover:-translate-y-2 md:block hidden">
+                    <img src="https://cdn.cloudfastcdn.com/image/ba90eef841c6aa4f396b084a666fae079cdacbc1-600.jpeg" alt="FirmLift Bra Back View" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-300 hover:-translate-y-2">
+                    <img src="https://cdn.cloudfastcdn.com/image/6218ce28fdb12f0c9e1f507cc56302b9b9126dcf-600.jpeg" alt="FirmLift Bra Side View" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-300 hover:-translate-y-2 md:block hidden">
+                    <img src="https://cdn.cloudfastcdn.com/image/a6806088ca1678896ea27f5d27dcab695f2815ba-600.jpeg" alt="FirmLift Bra Material Close-up" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg transform transition duration-300 hover:-translate-y-2">
+                    <img src="https://cdn.cloudfastcdn.com/image/1ca587141ddf0f74030083e231e1ab8a5b58d5cf-600.jpeg" alt="FirmLift Bra Comfort Design" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="https://mila.orderonline.id/firmlift-bra" target="_self" class="btn-pulse inline-block bg-premium-pink hover:bg-premium-gold text-white font-bold px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                    Lihat Semua Warna <i class="fas fa-palette ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-premium-nude">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-premium-dark mb-4">Kata <span class="text-premium-gold">Mereka</span> yang Sudah Mencoba</h2>
+                <p class="text-lg text-premium-dark max-w-3xl mx-auto">
+                    Pengalaman nyata dari wanita Indonesia yang telah mempercayakan kenyamanan mereka pada FirmLift Bra.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150" alt="Rina" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-premium-dark">Rina Sari</h4>
+                            <div class="flex text-premium-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-premium-dark italic">
+                        "Setelah pakai FirmLift, semua bra lain saya simpan. Nyaman banget dipakai seharian bahkan buat olahraga. Dukungannya sempurna!"
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150" alt="Dewi" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-premium-dark">Dewi Anggraeni</h4>
+                            <div class="flex text-premium-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-premium-dark italic">
+                        "Bentuknya tetap bagus setelah dicuci berkali-kali. Bahannya juga nyerap keringat dengan baik, jadi nggak gerah meski dipakai seharian."
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150" alt="Sinta" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-premium-dark">Sinta Wulandari</h4>
+                            <div class="flex text-premium-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-premium-dark italic">
+                        "Pengiriman cepat, packing rapih. Bra-nya persis seperti di gambar. Sekarang koleksi saya sudah 3 warna berbeda karena suka banget!"
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5cd?auto=format&fit=crop&w=150" alt="Ani" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-semibold text-premium-dark">Ani Fitriani</h4>
+                            <div class="flex text-premium-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-premium-dark italic">
+                        "Kualitasnya premium banget. Tadinya ragu karena harganya lebih mahal dari biasanya, tapi benar-benar worth it. Langsung beli lagi untuk hadiah saudara."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section class="parallax-bg py-20" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://cdn.cloudfastcdn.com/image/c04923c2f780df1b2349a7201f4ce923b3435f2d.gif');">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                <span class="text-premium-gold">PROMO SPESIAL!</span> Harga Terbaik Hari Ini Saja
+            </h2>
+            <p class="text-xl text-premium-nude mb-8 max-w-2xl mx-auto">
+                Dapatkan FirmLift Bra dengan potongan harga Rp 70.000 hanya untuk 100 pembeli berikutnya
+            </p>
+            
+            <div class="flex justify-center mb-8">
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6">
+                    <div class="text-white font-bold text-4xl mb-2" id="stock-counter">84</div>
+                    <div class="text-premium-pink font-semibold">Tersisa Hari Ini</div>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="text-center bg-premium-dark bg-opacity-50 rounded-xl p-6 backdrop-blur-sm">
+                    <div class="text-premium-gold font-bold text-3xl mb-2">Rp 210.000</div>
+                    <div class="text-premium-nude line-through">Harga Normal</div>
+                </div>
+                
+                <div class="text-center bg-premium-pink rounded-xl p-6">
+                    <div class="text-white font-bold text-3xl mb-2">Rp 140.000</div>
+                    <div class="text-premium-dark">Harga Spesial Hari Ini</div>
+                </div>
+            </div>
+            
+            <div class="mt-8">
+                <a href="https://mila.orderonline.id/firmlift-bra" target="_self" class="btn-pulse inline-block bg-premium-gold hover:bg-premium-pink text-premium-dark font-bold px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                    DAPATKAN PROMO SEKARANG <i class="fas fa-bolt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-premium-dark mb-4">
+                    Pertanyaan yang <span class="text-premium-gold">Sering Ditanyakan</span>
+                </h2>
+                <p class="text-lg text-premium-dark max-w-3xl mx-auto">
+                    Temukan jawaban untuk pertanyaan terpopuler seputar FirmLift Bra
+                </p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="border border-premium-gold rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 bg-white hover:bg-premium-nude transition font-medium text-premium-dark flex justify-between items-center">
+                        <span>Apakah FirmLift Bra cocok untuk ukuran payudara besar?</span>
+                        <i class="fas fa-plus text-premium-gold"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-premium-dark">
+                        Sangat cocok! FirmLift Bra dirancang untuk memberikan dukungan maksimal pada segala ukuran, termasuk ukuran besar. Desain tanpa kawat dengan bahan elastis premium mampu menopang dengan baik tanpa menyebabkan rasa sakit atau ketidaknyamanan.
+                    </div>
+                </div>
+                
+                <div class="border border-premium-gold rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 bg-white hover:bg-premium-nude transition font-medium text-premium-dark flex justify-between items-center">
+                        <span>Bagaimana cara menentukan ukuran yang tepat?</span>
+                        <i class="fas fa-plus text-premium-gold"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-premium-dark">
+                        Kami menyediakan panduan ukuran detail di halaman produk. FirmLift Bra memiliki range ukuran yang luas dari S hingga XL. Bahan yang elastis juga membuat bra mampu menyesuaikan bentuk tubuh dengan baik. Jika ragu, silakan konsultasi dengan tim kami via WhatsApp.
+                    </div>
+                </div>
+                
+                <div class="border border-premium-gold rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 bg-white hover:bg-premium-nude transition font-medium text-premium-dark flex justify-between items-center">
+                        <span>Apakah bisa dikembalikan jika ukurannya tidak pas?</span>
+                        <i class="fas fa-plus text-premium-gold"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-premium-dark">
+                        Tentu saja! Kami memberikan garansi 30 hari untuk penukaran ukuran GRATIS jika Anda belum puas dengan kenyamanan atau ukurannya. Pastikan tag masih terpasang dan produk dalam kondisi baru.
+                    </div>
+                </div>
+                
+                <div class="border border-premium-gold rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 bg-white hover:bg-premium-nude transition font-medium text-premium-dark flex justify-between items-center">
+                        <span>Berapa lama pengiriman biasanya?</span>
+                        <i class="fas fa-plus text-premium-gold"></i>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-premium-dark">
+                        Pengiriman reguler biasanya memakan waktu 2-4 hari kerja untuk Pulau Jawa dan 3-7 hari kerja untuk luar Jawa. Kami juga menyediakan opsi pengiriman ekspres yang lebih cepat. Setiap pesanan akan dikirim dalam 24 jam setelah pembayaran terkonfirmasi.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="bg-premium-gold py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-premium-dark mb-4">
+                Rasakan Kenyamanan Premium yang Layak Anda Dapatkan
+            </h2>
+            <p class="text-xl text-premium-nude mb-8 max-w-2xl mx-auto">
+                Jangan lewatkan kesempatan memiliki FirmLift Bra dengan harga spesial hari ini
+            </p>
+            
+            <a href="https://mila.orderonline.id/firmlift-bra" target="_self" class="btn-pulse inline-block bg-premium-pink hover:bg-premium-dark text-white font-bold px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 mb-6">
+                PESAN SEKARANG DENGAN POTONGAN 50% <i class="fas fa-tag ml-2"></i>
+            </a>
+            
+            <p class="text-premium-nude text-sm">
+                <i class="fas fa-lock mr-2"></i> Pembayaran Aman | 
+                <i class="fas fa-truck ml-4 mr-2"></i> Gratis Ongkir Min. 2 Buah | 
+                <i class="fas fa-exchange-alt ml-4 mr-2"></i> Garansi 30 Hari
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-premium-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-crown text-premium-gold mr-2"></i> FirmLift Bra
+                    </h3>
+                    <p class="max-w-xs text-premium-nude">
+                        Bra premium inovatif yang dirancang khusus untuk wanita Indonesia dengan standar kualitas dan kenyamanan tertinggi.
+                    </p>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h4 class="text-lg font-medium mb-4">Tautan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#benefits" class="text-premium-nude hover:text-premium-gold transition">Keunggulan</a></li>
+                        <li><a href="#testimonials" class="text-premium-nude hover:text-premium-gold transition">Testimoni</a></li>
+                        <li><a href="#faq" class="text-premium-nude hover:text-premium-gold transition">FAQ</a></li>
+                        <li><a href="https://shopee.co.id/HOHO_HWANG-(B-215)-BRA-WANITA-seamless-IMPORT-TANPA-KAWAT-PAKAIAN-DALAM-i.224655728.28572179157" class="text-premium-nude hover:text-premium-gold transition">Shopee Official</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Kontak Kami</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-shopping-cart text-premium-gold mr-3"></i>
+                            <a href="https://mila.orderonline.id/firmlift-bra" class="text-premium-nude hover:text-premium-gold transition">Order Online</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp text-premium-gold mr-3"></i>
+                            <span class="text-premium-nude">+62 812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-premium-gold mr-3"></i>
+                            <span class="text-premium-nude">cs@firmliftbra.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-premium-gold border-opacity-20 mt-12 pt-8 text-center text-premium-nude">
+                <p>&copy; 2023 FirmLift Bra. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Countdown timer
+            let timeLeft = 15 * 60;
+            const timerElement = document.getElementById('timer');
+            const countdown = setInterval(function() {
+                const minutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                timerElement.textContent = minutes + ':' + seconds;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    timerElement.textContent = 'EXPIRED';
+                    timerElement.parentElement.style.color = '#ff0000';
+                }
+                timeLeft--;
+            }, 1000);
+            
+            // Stock counter
+            let count = 84;
+            const counterElement = document.getElementById('stock-counter');
+            const stockInterval = setInterval(() => {
+                if (count > 0) {
+                    count--;
+                    counterElement.textContent = count;
+                    if (count === 75) clearInterval(stockInterval);
+                }
+            }, 10000);
+            
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    if (answer.classList.contains('hidden')) {
+                        answer.classList.remove('hidden');
+                        answer.classList.add('block');
+                        icon.classList.replace('fa-plus', 'fa-minus');
+                    } else {
+                        answer.classList.remove('block');
+                        answer.classList.add('hidden');
+                        icon.classList.replace('fa-minus', 'fa-plus');
+                    }
+                });
+            });
+            
+            // Randomize stock every 10 seconds
+            setInterval(() => {
+                if (count > 0 && count > 70) {
+                    let newCount = count - Math.floor(Math.random() * 3);
+                    if (newCount < 70) newCount = 70;
+                    count = newCount;
+                    counterElement.textContent = count;
+                }
+            }, 10000);
+        });
+    </script>
+</body>
+</html>
